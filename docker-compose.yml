@@ -1,0 +1,23 @@
+services:
+  influxdb:
+    image: ${INFLUX_IMAGE}
+    container_name: ${INFLUX_CONTAINER}
+    ports:
+      - "${INFLUX_PORT}:8086"
+    environment:
+      - TZ=${TZ}
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_ORG}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_BUCKET}
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUX_TOKEN}
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+    restart: unless-stopped
+
+volumes:
+  influxdb_data:
+  influxdb_config:
+
