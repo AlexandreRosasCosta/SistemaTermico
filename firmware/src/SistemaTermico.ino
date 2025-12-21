@@ -1,6 +1,4 @@
 #include <math.h>
-#include <WiFi.h>
-#include <PubSubClient.h>
 
 // ==== PINAGEM ESP32 ====
 const uint8_t PIN_ZC   = 27;   // zero-cross (H11AA1)
@@ -41,7 +39,7 @@ void updateDelayFromPower()
     return;
   }
   float u = powerPercent / 100.0f;
-  u = u * u * u;  // "gamma" = 2.0 (mais suave no começo)
+  u = u * u;  // "gamma" = 2.0 (mais suave no começo)
   delay_us = MAX_DELAY_US - (unsigned long)(u * (MAX_DELAY_US - MIN_DELAY_US));
 }
 

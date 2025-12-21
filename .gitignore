@@ -75,3 +75,4 @@ log_*.txt
 *.swo
 .vscode/
 .idea/
+*.kate-swp
