@@ -40,5 +40,38 @@
 # debug information files
 *.dwo
 
-# Environment
+# Local commands
+.terminal_commands*
+
+# Platform/ build
+.pio/
+.cmake/
+.ccls-cache/
+*.elf
+*.bin
+*.hex
+
+# Python
+venv/
+.venv/
+env/
 .env
+__pycache__/
+*.py[cod]
+
+#Dados grandes / Temporários
+analysis/data/raw/*
+!analysis/data/raw/README.md
+
+analysis/data/processed/*
+!analysis/data/processed/README.mod
+
+*.log
+log_*.txt
+
+# Editor
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
