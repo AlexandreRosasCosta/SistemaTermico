@@ -40,9 +40,9 @@ void updateDelayFromPower()
     delay_us = 0; // não dispara o trigger
     return;
   }
-
-  float power = powerPercent / 100.0f;
-  delay_us = MAX_DELAY_US - (unsigned long)(power * (MAX_DELAY_US - MIN_DELAY_US));
+  float u = powerPercent / 100.0f;
+  u = u * u * u;  // "gamma" = 2.0 (mais suave no começo)
+  delay_us = MAX_DELAY_US - (unsigned long)(u * (MAX_DELAY_US - MIN_DELAY_US));
 }
 
 // ===== ISR ZERO CROSS =====
