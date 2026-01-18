@@ -1,0 +1,15 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "f26db309-f5d0-478d-a2fb-e7a8a78f8e49")
+	(paper "A4")
+	(title_block
+		(date "2025-11-22")
+		(rev "0.0")
+		(comment 2 "Professor: João Paulo Coelho")
+		(comment 3 "Authors: Alexandre Costa (aXXXXX) e Caio Oliveira (a52963)")
+		(comment 4 "Mecatrónica - MEEC - IPB")
+	)
+	(lib_symbols)
+)
